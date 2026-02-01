@@ -1,22 +1,14 @@
-import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
+
 import React, { useState } from 'react'
 import ProductCards from '../../components/ProductCards'
 import SwiperComments from '../../components/SwiperComments'
+import useFetch from '../../hooks/useFetch'
 
 function HomePage() {
     // Use an object to track expanded categories
     const [expanded, setExpanded] = useState({})
 
-    const getData = async () => {
-        let res = await axios.get("https://fakestoreapi.com/products")
-        return res
-    }
-
-    const { data, isLoading } = useQuery({
-        queryKey: ["products"],
-        queryFn: getData
-    })
+    const {data, isLoading} = useFetch({url:"products", key:["products"]})
 
     const products = data?.data
 
