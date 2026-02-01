@@ -39,13 +39,13 @@ function HomePage() {
 
     return (
         <>
-            <section id='hero' className='mt-23 px-5'>
-                <div className='container mx-auto'>
+            <section id='hero' className=' md:pt-23 bg-[#F2F0F1]'>
+                <div className='container mx-auto px-5'>
                     <div className='pt-26.25 pb-29 flex flex-col gap-7'>
-                        <h1 className='text-[64px] font-bold max-w-137.5 w-full leading-20'>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+                        <h1 className='text-[46px] md:text-[56px] lg:text-[64px] font-bold max-w-137.5 w-full leading-20'>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
                         <p className='text-[#00000099] max-w-136.25 w-full'>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
                         <button className='hover:scale-[1.1] duration-300 cursor-pointer max-w-52.5 w-full h-13 bg-black rounded-[62px] text-white'>Shop Now</button>
-                        <div className='flex max-w-150 w-full items-center justify-between'>
+                        <div className='flex max-w-150 w-full justify-center gap-10 md:gap-5 text-center flex-wrap items-center sm:justify-between'>
                             <span>
                                 <h3 className='text-[40px] font-bold'>200+</h3>
                                 <p className='text-[#00000099]'>International Brands</p>
@@ -62,21 +62,25 @@ function HomePage() {
 
 
                     </div>
+
+                </div>
+                <div className='md:hidden w-full max-w-200'>
+                    <img className='w-full' src="/Rectangle 2 (1).png" alt="" />
                 </div>
             </section>
             <div className="marquee">
                 <div className="marquee-content">
-                    <img src="/Group.svg" alt="" />
-                    <img src="/zara-logo-1 1.svg" alt="" />
-                    <img src="/gucci-logo-1 1.svg" alt="" />
-                    <img src="/prada-logo-1 1.svg" alt="" />
-                    <img src="/Group (1).svg" alt="" />
+                    <img className='w-29 md:w-41.5' src="/Group.svg" alt="" />
+                    <img className='w-15.75 md:w-22.75' src="/zara-logo-1 1.svg" alt="" />
+                    <img className='w-27.25 md:w-39 ' src="/gucci-logo-1 1.svg" alt="" />
+                    <img className='w-31.75 md:w-48.5' src="/prada-logo-1 1.svg" alt="" />
+                    <img className='w-33.5 md:w-51.5' src="/Group (1).svg" alt="" />
                     {/* Repeat the images for seamless looping */}
-                    <img src="/Group.svg" alt="" />
-                    <img src="/zara-logo-1 1.svg" alt="" />
-                    <img src="/gucci-logo-1 1.svg" alt="" />
-                    <img src="/prada-logo-1 1.svg" alt="" />
-                    <img src="/Group (1).svg" alt="" />
+                    <img className='w-29 md:w-41.5' src="/Group.svg" alt="" />
+                    <img className='w-15.75 md:w-22.75' src="/zara-logo-1 1.svg" alt="" />
+                    <img className='w-27.25 md:w-39 ' src="/gucci-logo-1 1.svg" alt="" />
+                    <img className='w-31.75 md:w-48.5' src="/prada-logo-1 1.svg" alt="" />
+                    <img className='w-33.5 md:w-51.5' src="/Group (1).svg" alt="" />
                 </div>
             </div>
             <section className='pt-10 px-5'>
@@ -85,8 +89,8 @@ function HomePage() {
                         allCategories?.map((category) => {
                             return (
                                 <div key={category}>
-                                    <h1 className='text-center uppercase text-[48px] pb-10 pt-10 font-bold'>{category}</h1>
-                                    <div className='grid grid-cols-4 gap-5'>
+                                    <h1 className='text-center uppercase text-[36px] md:text-[48px] pb-10 pt-10 font-bold'>{category}</h1>
+                                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
                                         {
                                             expanded[category]
                                                 ? products?.filter((item) => item.category === category)?.map((el) => (
@@ -110,27 +114,27 @@ function HomePage() {
                 </div>
             </section>
             <section>
-                <div className='container mx-auto bg-[#F0F0F0] p-16 rounded-[40px]'>
-                    <h1 className='text-[48px] font-bold text-center pb-16'>BROWSE BY DRESS STYLE</h1>
+                <div className='container mx-auto bg-[#F0F0F0] p-7 lg:p-16 rounded-[40px]'>
+                    <h1 className='text-[36px] sm:text-[48px] font-bold text-center pb-5 sm:pb-16'>BROWSE BY DRESS STYLE</h1>
                     <div className='flex flex-col gap-5'>
-                        <div className='flex items-center gap-5 w-full'>
-                            <div className='relative rounded-[20px] h-72.25 max-w-122.5 w-full overflow-hidden'>
+                        <div className='flex flex-col md:flex-row items-center gap-5 w-full'>
+                            <div className='relative rounded-[20px] h-47.5 lg:h-72.25 md:max-w-65.5 lg:max-w-85.5 xl:max-w-122.5 w-full overflow-hidden'>
                                 <h4 className='absolute text-[36px] font-bold top-6.25 left-9'>Casual</h4>
-                                <img className='w-full object-contain' src="/image 11 (1).png" alt="" />
+                                <img className='w-full h-full object-cover' src="/image 11 (1).png" alt="" />
                             </div>
-                            <div className='relative rounded-[20px] h-72.25 max-w-224.5 w-full overflow-hidden'>
+                            <div className='relative rounded-[20px] h-47.5 lg:h-72.25 max-w-224.5 w-full overflow-hidden'>
                                 <h4 className='absolute text-[36px] font-bold top-6.25 left-9'>Formal</h4>
-                                <img className='w-full object-contain' src="/image 13.png" alt="" />
+                                <img className='w-full h-full object-cover' src="/image 13.png" alt="" />
                             </div>
                         </div>
-                        <div className='flex gap-5 items-center'>
-                            <div className='relative rounded-[20px] h-72.25 max-w-224.5 w-full overflow-hidden'>
+                        <div className='flex flex-col md:flex-row gap-5 items-center'>
+                            <div className='relative rounded-[20px] h-47.5 lg:h-72.25 max-w-224.5 w-full overflow-hidden'>
                                 <h4 className='absolute text-[36px] font-bold top-6.25 left-9'>Party</h4>
-                                <img className='w-full object-contain' src="/image 12.png" alt="" />
+                                <img className='w-full h-full object-cover' src="/image 12.png" alt="" />
                             </div>
-                            <div className='relative rounded-[20px] h-72.25 max-w-122.5 w-full overflow-hidden'>
+                            <div className='relative rounded-[20px] h-47.5 lg:h-72.25  md:max-w-65.5 lg:max-w-85.5 xl:max-w-122.5 w-full overflow-hidden'>
                                 <h4 className='absolute text-[36px] font-bold top-6.25 left-9'>Gym</h4>
-                                <img className='w-full object-contain' src="/image 14 (1).png" alt="" />
+                                <img className='w-full h-full object-cover' src="/image 14 (1).png" alt="" />
                             </div>
                         </div>
                     </div>
@@ -138,15 +142,15 @@ function HomePage() {
             </section>
             <section className='pt-20'>
                 <div>
-                    <h1 className='container mx-auto text-[48px] font-bold'>OUR HAPPY CUSTOMERS</h1>
+                    <h1 className='container px-5 mx-auto text-[36px] sm:text-[48px] font-bold'>OUR HAPPY CUSTOMERS</h1>
                     <div className='py-10'>
                         <SwiperComments />
                     </div>
                 </div>
             </section>
-            
+
         </>
     )
 }
 
-export default HomePage
+export default HomePage 
