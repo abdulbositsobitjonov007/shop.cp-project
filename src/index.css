@@ -45,4 +45,10 @@
   #hero{
     background-image: none;
   }
+  .marquee{
+    padding: 20px 0;
+  }
+  .marquee-content img{
+    margin: 0 20px;
+  }
 }
