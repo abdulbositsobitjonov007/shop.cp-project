@@ -40,7 +40,7 @@ function HomePage() {
     return (
         <>
             <section id='hero' className=' md:pt-23 bg-[#F2F0F1]'>
-                <div className='container mx-auto px-5'>
+                <div className='relative container mx-auto px-5'>
                     <div className='pt-26.25 pb-29 flex flex-col gap-7'>
                         <h1 className='text-[46px] md:text-[56px] lg:text-[64px] font-bold max-w-137.5 w-full leading-20'>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
                         <p className='text-[#00000099] max-w-136.25 w-full'>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
@@ -59,7 +59,12 @@ function HomePage() {
                                 <p className='text-[#00000099]'>Happy Customers</p>
                             </span>
                         </div>
-
+                        <div className='absolute right-5 md:right-30 lg:right-60 xl:right-0 top-180 md:top-5'>
+                            <img className='scale-anim' src="/Vector.svg" alt="" />
+                        </div>
+                        <div className='absolute  sm:right-130 md:right-80 lg:right-90 xl:right-130 2xl:right-160 top-210 md:top-90 lg:top-65'>
+                            <img className='scale-anim' src="/Vector.svg" alt="" />
+                        </div>
 
                     </div>
 
