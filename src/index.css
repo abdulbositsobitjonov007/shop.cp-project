@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
 
+
 *{
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
 }
@@ -69,4 +70,9 @@
   100% {
     transform: scale(0.5);
   }
+}
+
+option{
+  border-radius: 62px;
+  font-size: 18px;
 }
