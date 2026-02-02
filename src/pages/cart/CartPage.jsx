@@ -23,9 +23,9 @@ function CartPage() {
                         </div>
                         <div className='flex w-full justify-between'>
                           <div className='flex flex-col max-w-70 w-full '>
-                            <h1>{el.title}</h1>
-                            <p className='line-clamp-1 text-[14px] font-extralight'>{el.description}</p>
-                            <p>{el.price}</p>
+                            <h1 className='text-[23px] line-clamp-2'>{el.title}</h1>
+                            <p className=' line-clamp-1 text-[14px] font-extralight'>{el.description}</p>
+                            <p className='text-[20px] font-bold'>${el.price}</p>
                           </div>
                           <div className='flex w-full flex-col justify-between items-end gap-2'>
                             <div>
