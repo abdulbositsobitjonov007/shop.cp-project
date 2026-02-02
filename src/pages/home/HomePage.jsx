@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import ProductCards from '../../components/ProductCards'
 import SwiperComments from '../../components/SwiperComments'
 import useFetch from '../../hooks/useFetch'
+import CountUp from 'react-countup'
 
 function HomePage() {
     // Use an object to track expanded categories
@@ -39,15 +40,16 @@ function HomePage() {
                         <button className='hover:scale-[1.1] duration-300 cursor-pointer max-w-52.5 w-full h-13 bg-black rounded-[62px] text-white'>Shop Now</button>
                         <div className='flex max-w-150 w-full justify-center gap-10 md:gap-5 text-center flex-wrap items-center sm:justify-between'>
                             <span>
-                                <h3 className='text-[40px] font-bold'>200+</h3>
+                                
+                                <h3 className='text-[40px] font-bold'><CountUp end={200} duration={5} />+</h3>
                                 <p className='text-[#00000099]'>International Brands</p>
                             </span>
                             <span>
-                                <h3 className='text-[40px] font-bold'>2,000+</h3>
+                                <h3 className='text-[40px] font-bold'><CountUp end={2000} duration={5} />+</h3>
                                 <p className='text-[#00000099]'>High-Quality Products</p>
                             </span>
                             <span>
-                                <h3 className='text-[40px] font-bold'>30,000+</h3>
+                                <h3 className='text-[40px] font-bold'><CountUp end={30000} duration={5} />+</h3>
                                 <p className='text-[#00000099]'>Happy Customers</p>
                             </span>
                         </div>

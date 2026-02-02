@@ -91,7 +91,7 @@ function FilterPage() {
             <hr className='text-[#bcbcbc] my-5' />
             <ul className='flex flex-col gap-2'>
               <li className='flex items-center gap-3'>
-                <input className='w-5 h-5' value={"All"} onClick={(e) => setCategoryName(e?.target?.value)} id={"All"} name='radio' type="radio" />
+                <input className='w-5 h-5' value={"All"} checked={categoryName === "All"} onChange={(e) => setCategoryName(e?.target?.value)} id={"All"} name='radio' type="radio" />
                 <label className='text-[20px]' htmlFor={"All"}>{"All"}</label>
               </li>
               {

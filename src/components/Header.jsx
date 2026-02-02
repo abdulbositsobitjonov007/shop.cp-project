@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { IoSearchSharp } from 'react-icons/io5'
+import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
 
 function Header() {
@@ -7,6 +8,7 @@ function Header() {
     const [selected, setSelected] = useState('Shop');
     const dropdownRef = useRef(null);
     const navigate = useNavigate();
+    const cart = useSelector((state) => state.cart)
 
     // Close dropdown on outside click
     useEffect(() => {
@@ -68,7 +70,9 @@ function Header() {
                     <input placeholder='Search for products...' className='bg-[#F0F0F0] border-none rounded-l-none outline-none rounded-[60px] h-12 w-full' type="text" />
                 </div>
                 <div className='hidden md:flex items-center sm:max-w-25 gap-5 sm:gap-7.5 w-full sm:justify-between'>
-                    <Link><img src="/Frame.svg" alt="" /></Link>
+                    <Link to={"cart"} className='relative'><img src="/Frame.svg" alt="" />{
+                        cart?.length > 0 ? <span className='absolute -top-1 -right-1 bg-[red] border border-[black] text-white flex items-center justify-center rounded-[10px] h-3.75 w-3.75'>{cart.length}</span> : ""
+                    }</Link>
                     <Link><img src="/Frame (1).svg" alt="" /></Link>
                 </div>
             </nav>

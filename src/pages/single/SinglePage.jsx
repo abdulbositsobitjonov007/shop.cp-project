@@ -2,16 +2,25 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch'
 import SwiperComments from '../../components/SwiperComments'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart, decrease, increase } from '../../app/cartSlice'
 
 function SinglePage() {
 
   const { id } = useParams()
+  const dispatch = useDispatch()
+  const cart = useSelector((state) => state.cart)
+
+  // Ensure cart is always an array
+  const cartItems = Array.isArray(cart) ? cart : [];
 
   const { data } = useFetch({ url: `products/${id}`, key: ["product", id] })
 
   const singleProduct = data?.data;
 
-
+  if (!singleProduct) {
+    return <div className="text-center py-20 text-xl">Loading...</div>;
+  }
 
   return (
     <section className='pt-30 px-5'>
@@ -25,7 +34,7 @@ function SinglePage() {
             <p className='flex items-center text gap-1'><img className='w-6' src="/Star 1.svg" alt="" />{singleProduct?.rating?.rate}</p>
             <p className='text-[32px] font-bold'>${singleProduct?.price}</p>
             <p className='text-[#00000099] first-letter:uppercase line-clamp-2'>{singleProduct?.description}</p>
-            <hr className='text-[#b6b5b5] my-3'/>
+            <hr className='text-[#b6b5b5] my-3' />
             <div>
               <p className='text-[#00000099] pb-3'>Select Colors</p>
               <div className='flex items-center gap-2'>
@@ -47,7 +56,9 @@ function SinglePage() {
               </div>
             </div>
             <hr className='text-[#b6b5b5] my-3' />
-            <button className='sm:max-w-100 w-full cursor-pointer border-2 border-[black] hover:bg-[grey] duration-300 h-13 rounded-[62px] bg-black text-white'>Add to Cart</button>
+            {
+              cartItems.find((el) => el.id === singleProduct?.id) ? <div className='flex items-center max-w-100 w-full bg-[#b8b8b8] h-13 rounded-[62px] justify-between px-10'><button onClick={() => dispatch(decrease(singleProduct?.id))} className='max-w-20 w-full h-full cursor-pointer'>-</button><span>{cart?.find((el) => el.id === singleProduct?.id)?.qty}</span><button onClick={() => dispatch(increase(singleProduct?.id))} className='max-w-20 w-full h-full cursor-pointer'>+</button></div> : <button onClick={() => dispatch(addToCart(singleProduct))} className='sm:max-w-100 w-full cursor-pointer border-2 border-[black] hover:bg-[grey] duration-300 h-13 rounded-[62px] bg-black text-white'>Add to Cart</button>
+            }
           </div>
         </div>
         <div className='my-15'>
